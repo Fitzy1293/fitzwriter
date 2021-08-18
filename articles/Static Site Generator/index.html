@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="site">
+<div class="site-wrap">
+  <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="https://fitzover.com" class="site-title">fitzover.com</a>
+      <nav class="site-nav">
+        <a href="https://fitzover.com/articles">articles</a>
+      </nav>
+      <div class="clearfix"></div>
+
+        </div>
+    <!--
+    <div style="text-align:center">
+      <a href="https://github.com/fitzover">Check out my Github account</a>
+    </div>
+     -->
+  </div>
+</header>
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        <div class="post">
+  <header class="post-header" style="fontsize:74em">
+    <a style="font-size:1.5rem; font-weight: bold" href="https://fitzover.com/articles/Static Site Generator/index.html">Static Site Generator</a>
+  </header><article class="post-content">
+<div class="post p2 p-responsive wrap" role="main">
+<div class="measure">
+<div class="post">
+<h1 id="this-is-my-static-site-generator-for-personal-user">This is my static site generator for personal user</h1>
+<p>This is a hodgepodge way to make a a static site generator that works for me.
+ This is not meant for the wider world.</p>
+<h1 id="how-to-use-it">How to use it?</h1>
+<p>You can configure a .toml like so to generate an .html file</p>
+<pre><code class="language-toml">[website]
+url = 'fitzover.com'
+blog = 'articles'
+
+[article]
+title = 'Static Site Generator'
+
+[resources.markdown]
+path = 'markdown.md'
+
+[resources.style]
+path = 'style.css'
+</code></pre>
+<p>To start a new article with a single .toml file in your directory.</p>
+<pre><code class="language-shell">python tomltest.py init
+</code></pre>
+<p>After initialized.</p>
+<pre><code class="language-shell">python tomltest.py -f blog.toml
+</code></pre>
+<h1 id="using-with-a-live-server">Using with a live server</h1>
+<p>Launch a live server however you want.
+Then run this command to have it update on save.</p>
+<pre><code class="language-shell">ls *.md | entr python tomltest.py -f blog.toml
+</code></pre>
+<p>This lets you edit markdown files with instant feedback on how it will look in the browser.</p>
+</article></div></div></div></div></div></body></html>

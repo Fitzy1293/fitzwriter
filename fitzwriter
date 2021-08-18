@@ -1,0 +1,3 @@
+#!/bin/env bash
+
+ls *.md | entr python tomltest.py -f blog.toml

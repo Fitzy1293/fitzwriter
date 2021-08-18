@@ -1,0 +1,12 @@
+[website]
+url = 'fitzover.com'
+blog = 'articles'
+
+[article]
+title = 'Static Site Generator'
+
+[resources.markdown]
+path = 'README.md'
+
+[resources.style]
+path = 'style.css'
