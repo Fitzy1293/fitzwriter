@@ -1,7 +1,10 @@
 # This is my static site generator for personal user
 
- This is a hodgepodge way to make a a static site generator that works for me.
- This is not meant for the wider world.
+This is a hodgepodge way to make a a static site generator that works for me.
+I haven't used this for anything outside of testing.
+
+This is not meant for the wider world.
+
 
 # How to use it?
 
@@ -24,6 +27,8 @@ path = 'style.css'
 
 To start a new article with a single .toml file in your directory.
 
+This needs to be more robust, will probably mess up if there are multiple .toml files.
+
 ```shell
 python tomltest.py init
 ```
@@ -36,13 +41,18 @@ python tomltest.py -f blog.toml
 
 
 
-# Using with a live server
+# Instant feedback with a live server.
 
-Launch a live server however you want.
-Then run this command to have it update on save.
+To instantly see how it looks in the browser.
+
+- Launch a live server however you want.
+  - You can launch a basic HTTP server with python: ```python -m http.server 8000```
+ 
+  - The functionality is also built into most editors. 
+
+- Then run this command to have it update on save.
 
 ```shell
 ls *.md | entr python tomltest.py -f blog.toml
 ```
 
-This lets you edit markdown files with instant feedback on how it will look in the browser.
