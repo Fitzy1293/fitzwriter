@@ -1,9 +1,9 @@
 [website]
 url = 'fitzover.com'
-blog = 'articles'
+blog = 'random'
 
 [article]
-title = 'Static Site Generator'
+title = 'A fitzwriter test'
 
 [resources.markdown]
 path = 'README.md'

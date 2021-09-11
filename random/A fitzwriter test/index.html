@@ -10,7 +10,7 @@
     <div class="measure">
       <a href="https://fitzover.com" class="site-title">fitzover.com</a>
       <nav class="site-nav">
-        <a href="https://fitzover.com/articles">articles</a>
+        <a href="https://fitzover.com/random">random</a>
       </nav>
       <div class="clearfix"></div>
 
@@ -27,14 +27,15 @@
       <div class="measure">
         <div class="post">
   <header class="post-header" style="fontsize:74em">
-    <a style="font-size:1.5rem; font-weight: bold" href="https://fitzover.com/articles/Static Site Generator/index.html">Static Site Generator</a>
+    <a style="font-size:1.5rem; font-weight: bold" href="https://fitzover.com/random/A fitzwriter test/index.html">A fitzwriter test</a>
   </header><article class="post-content">
 <div class="post p2 p-responsive wrap" role="main">
 <div class="measure">
 <div class="post">
 <h1 id="this-is-my-static-site-generator-for-personal-user">This is my static site generator for personal user</h1>
 <p>This is a hodgepodge way to make a a static site generator that works for me.
- This is not meant for the wider world.</p>
+I haven't used this for anything outside of testing.</p>
+<p>This is not meant for the wider world.</p>
 <h1 id="how-to-use-it">How to use it?</h1>
 <p>You can configure a .toml like so to generate an .html file</p>
 <pre><code class="language-toml">[website]
@@ -51,15 +52,26 @@ path = 'markdown.md'
 path = 'style.css'
 </code></pre>
 <p>To start a new article with a single .toml file in your directory.</p>
+<p>This needs to be more robust, will probably mess up if there are multiple .toml files.</p>
 <pre><code class="language-shell">python tomltest.py init
 </code></pre>
 <p>After initialized.</p>
 <pre><code class="language-shell">python tomltest.py -f blog.toml
 </code></pre>
-<h1 id="using-with-a-live-server">Using with a live server</h1>
-<p>Launch a live server however you want.
-Then run this command to have it update on save.</p>
+<h1 id="instant-feedback-with-a-live-server">Instant feedback with a live server.</h1>
+<p>To instantly see how it looks in the browser.</p>
+<ul>
+<li>Launch a live server however you want.</li>
+<li>
+<p>You can launch a basic HTTP server with python: <code>python -m http.server 8000</code></p>
+</li>
+<li>
+<p>The functionality is also built into most editors. </p>
+</li>
+<li>
+<p>Then run this command to have it update on save.</p>
+</li>
+</ul>
 <pre><code class="language-shell">ls *.md | entr python tomltest.py -f blog.toml
 </code></pre>
-<p>This lets you edit markdown files with instant feedback on how it will look in the browser.</p>
 </article></div></div></div></div></div></body></html>

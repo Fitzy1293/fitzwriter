@@ -5,34 +5,70 @@ import markdown
 from markdown.extensions.toc import TocExtension
 import argparse
 from shutil import copyfile
+from pathlib import Path
+
+ARGC = len(sys.argv)
 
 
-parser = argparse.ArgumentParser(description='Make things difficult for yourself with a custom SSG!')
-parser.add_argument('-f', '--toml', dest='TOML', help="initialize article directory")
-parser.add_argument('init', nargs='?', help="initialize article directory")
+parser = argparse.ArgumentParser(
+    formatter_class=argparse.RawTextHelpFormatter,
+    description='Make things difficult for yourself with a custom SSG! OS: Linux | Python Version: 3.8'
+)
+parser.add_argument('-i, --init', dest='INIT', default=False, action='store_true', help="initialize article directory")
+parser.add_argument('-f', '--toml', dest='TOML', default=False, help="initialize article directory")
+parser.add_argument('-t', '--test', dest='TEST', default=False, help="a test argument")
+
+if ARGC == 1:
+    parser.print_help()
+    sys.exit('\n**Please read the options above!**')
 
 
 ARGS = parser.parse_args()
+
+
+toml_files = [file for file in os.listdir(os.getcwd()) if file.endswith('.toml')]
+config_file = toml_files[0] if len(toml_files) == 1  else ARGS.TOML
+blog = toml.load(config_file)
+
+if ARGS.TEST:
+    print(ARGS)
+    print()
+
 
 def markdown_blog_text(markdown_file):
     with open(markdown_file, 'r') as f:
         markdown_text = f.read()
     return markdown_text
 
-def creat_initial_directory(article_dir, new_article_dir):
-    if not os.path.exists(article_dir):
-        os.mkdir(article_dir)
-        print('created dir:', article_dir, sep='\t')
+
+def creat_initial_directory(article_dir, new_article_dir, stylesheet_path):
+    '''
+    Creates directories if they do not exist:
+        -> articles/
+        -> ./articles/article-name/style.css
+    Touches file if it doesn't exist:
+        -> ./articles/article-name/style.css
+
+    '''
+
     if not os.path.exists(new_article_dir):
         os.mkdir(new_article_dir)
         print('created dir:', new_article_dir, sep='\t')
     else:
-        print(new_article_dir, 'already exists, do not need to init')
+      return 
+
+    if blog['resources']['style']['path'] in os.listdir(new_article_dir):
+      print(f'**run with "init" after making sure the directory below is empty**\n->\t"{new_article_dir}""')
+      print(*[os.path.join(new_article_dir, file) for file in os.listdir(new_article_dir)], sep='\n')
+    else:
+      Path(stylesheet_path).touch()
+      print('created empty .css file:', stylesheet_path, sep='\t')
+
+    
+
 
 if __name__ == '__main__':
-    toml_files = [file for file in os.listdir(os.getcwd()) if file.endswith('.toml')]
-    config_file = toml_files[0] if len(toml_files) == 1  else ARGS.TOML
-    blog = toml.load(config_file)
+
 
     website = blog['website']['url']
     article_dir = blog['website']['blog']
@@ -46,11 +82,17 @@ if __name__ == '__main__':
     article_path = os.path.join(new_article_dir, 'index.html')
     stylesheet_path = os.path.join(new_article_dir, stylesheet)
 
-    if ARGS.init:
-        creat_initial_directory(article_dir, new_article_dir)
+    if ARGS.INIT:
+      if not os.path.exists(article_dir):
+        os.mkdir(article_dir)
+        print('created dir:', article_dir, sep='\t')
+
+      creat_initial_directory(article_dir, new_article_dir, stylesheet_path)
+    
+    copyfile(stylesheet, stylesheet_path)
+
 
     #os.system(f'bat -p {config_file}')
-    copyfile(stylesheet, stylesheet_path)
 
     '''
     This is where it gets into formatting the HTML.
