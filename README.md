@@ -64,9 +64,6 @@ path = 'style.css'
 
 # Features
 
-
-
-
 ## See changes in the browser on save
 
 Right now it is set up to handle reloading on save, in Firefox.
@@ -84,5 +81,3 @@ Right now it is set up to handle reloading on save, in Firefox.
 ## Automatically create a table of contents
 
 Just add ***\[TOC\]*** to the first line of the .md file to create a table of contents.
-
-## This is just a little demonstration of the program, hope you enjoyed
