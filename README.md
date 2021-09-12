@@ -1,4 +1,6 @@
-[TOC]
+# Fitzwriter - a custom static site generator
+
+My static site generator, edit a markdown file and view the results in a browser.
 
 ## Links
 - [Github repo](https://github.com/fitzy1293/fitzwriter)
@@ -63,6 +65,9 @@ path = 'style.css'
     ```
 
 # Features
+
+
+
 
 ## See changes in the browser on save
 
