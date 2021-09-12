@@ -1,10 +1,5 @@
 [TOC]
 
-# Fitzwriter - a custom static site generator
-
-My static site generator, edit a markdown file and view the results in a browser.
-
-
 ## Links
 - [Github repo](https://github.com/fitzy1293/fitzwriter)
 
@@ -74,7 +69,7 @@ path = 'style.css'
 
 ## See changes in the browser on save
 
-Right now it is setup to handle reloading on save, in Firefox.
+Right now it is set up to handle reloading on save, in Firefox.
 
 - You can launch a basic HTTP server with python.
 
@@ -89,3 +84,5 @@ Right now it is setup to handle reloading on save, in Firefox.
 ## Automatically create a table of contents
 
 Just add ***\[TOC\]*** to the first line of the .md file to create a table of contents.
+
+## This is just a little demonstration of the program, hope you enjoyed

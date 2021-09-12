@@ -145,6 +145,8 @@ if __name__ == '__main__':
     markdown_string = markdown_blog_text()
     checksum = md5(markdown_string.encode('utf-8')).hexdigest()
     run_html_update(markdown_string)
+    if INIT_FLAG:
+      sys.exit()
 
     while True:
         if checksum != md5(markdown_blog_text().encode('utf-8')).hexdigest():
