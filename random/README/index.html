@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="https://fitzover.com/ghost.svg" type="image/svg">
+</head>
+<body class="site">
+
+    <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+      <div class="mt2 wrap">
+        <div class="measure">
+          <a href="https://fitzover.com" class="site-title">fitzover.com</a>
+          <nav class="site-nav">
+            <a href="https://fitzover.com/random">random</a>
+          </nav>
+          <div class="clearfix"></div>
+
+            </div>
+        <!--
+        <div style="text-align:center">
+          <a href="https://github.com/fitzover">Check out my Github account</a>
+        </div>
+         -->
+      </div>
+    </header>
+
+        <div class="post p2 p-responsive wrap" role="main">
+          <div class="measure">
+            <div class="post">
+      <header class="post-header" style="fontsize:74em">
+        <a style="font-size:1.5rem; font-weight: bold" href="https://fitzover.com/random/README/">README</a>
+      </header>
+    <article class="post-content">
+<div class="post p2 p-responsive wrap" role="main">
+<div class="measure">
+<div class="post">
+<div class="toc">
+<ul>
+<li><a href="#fitzwriter-a-custom-static-site-generator">Fitzwriter - a custom static site generator</a><ul>
+<li><a href="#links">Links</a></li>
+<li><a href="#requirements">Requirements</a></li>
+</ul>
+</li>
+<li><a href="#how-to-use-it">How to use it</a><ul>
+<li><a href="#configure-a-toml-file-like-below">Configure a TOML file like below</a><ul>
+<li><a href="#running-after-setup">Running after setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#features">Features</a><ul>
+<li><a href="#see-changes-in-the-browser-on-save">See changes in the browser on save</a></li>
+<li><a href="#automatically-create-a-table-of-contents">Automatically create a table of contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="fitzwriter-a-custom-static-site-generator">Fitzwriter - a custom static site generator</h1>
+<p>My static site generator, edit a markdown file and view the results in a browser.</p>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://github.com/fitzy1293/fitzwriter">Github repo</a></li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>
+<p>Requires python 3.8 or greater, with two packages not in the standard library.</p>
+<p><code>pip install markdown toml</code></p>
+</li>
+</ul>
+<p>This requires X11 as the window manager, because it uses <strong>xdotool</strong> to update the Firefox tab.</p>
+<ul>
+<li>
+<p><strong>Arch install</strong></p>
+<p><code>sudo pacman -S xdotool</code></p>
+</li>
+<li>
+<p><strong>Ubuntu install</strong></p>
+<p><code>sudo apt install xdotool</code></p>
+</li>
+</ul>
+<h1 id="how-to-use-it">How to use it</h1>
+<p>This program is meant to read a simple config, and stylesheet, to create a nice looking page based on what's in based in the given markdown file.</p>
+<h2 id="configure-a-toml-file-like-below">Configure a TOML file like below</h2>
+<pre><code class="language-toml">[website]
+url = 'fitzover.com'
+blog = 'random'
+favicon = 'fitzover.com/ghost.svg'
+
+[article]
+title = 'README'
+
+[resources.markdown]
+path = 'README.md'
+
+[resources.style]
+path = 'style.css'
+
+</code></pre>
+<h3 id="running-after-setup">Running after setup</h3>
+<ul>
+<li>
+<p>Run this to initialize.</p>
+<p><code>python tomltest.py init</code></p>
+</li>
+<li>
+<p>If it was initialized earlier.</p>
+<p><code>python tomltest.py -f blog.toml</code></p>
+</li>
+</ul>
+<h1 id="features">Features</h1>
+<h2 id="see-changes-in-the-browser-on-save">See changes in the browser on save</h2>
+<p>Right now it is setup to handle reloading on save, in Firefox.</p>
+<ul>
+<li>
+<p>You can launch a basic HTTP server with python.</p>
+<p><code>python -m http.server 8000</code></p>
+<ul>
+<li>Then open <strong><em>localhost:8000</em></strong> in Firefox.</li>
+</ul>
+</li>
+<li>
+<p>Or just open index.html in Firefox.</p>
+</li>
+</ul>
+<h2 id="automatically-create-a-table-of-contents">Automatically create a table of contents</h2>
+<p>Just add <strong><em>[TOC]</em></strong> to the first line of the .md file to create a table of contents.</p>
+</article></div></div></div></div></div></body></html>

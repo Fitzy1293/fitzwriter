@@ -125,12 +125,16 @@ ol, ul {
 }
 
 code {
-  background-color: rgb(32, 32, 32);;
-  border: .1em solid white;
+  background-color: #292d34;
+  /*border: .5em solid #c16266;*/
   color: white;
   display: block;
   font-size: .7rem;
-  padding:.4em
+
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: .4em;
+  padding-bottom: .4em;
 }
 
 pre {
@@ -705,7 +709,7 @@ a {
 }
 
 a:hover, a:focus, a:active {
-  color: #315e48;
+  color: pink;
   text-decoration: underline
 }
 
@@ -757,7 +761,9 @@ pre {
   line-height: 1.11;
   overflow-x: scroll;
   margin-bottom: 0.88em;
-  background-color: #fafafa
+  background-color: white;
+  border-radius: 1em;
+  border: solid black .2em
 }
 
 .highlight .p {
@@ -964,9 +970,6 @@ sup {
   text-align: center
 }
 
-.site-header {
-  background-image: url("/images/header.png")
-}
 
 table {
   width: 100%;

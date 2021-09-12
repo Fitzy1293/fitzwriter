@@ -1,58 +1,91 @@
-# This is my static site generator for personal user
+[TOC]
 
-This is a hodgepodge way to make a a static site generator that works for me.
-I haven't used this for anything outside of testing.
+# Fitzwriter - a custom static site generator
 
-This is not meant for the wider world.
+My static site generator, edit a markdown file and view the results in a browser.
 
 
-# How to use it?
+## Links
+- [Github repo](https://github.com/fitzy1293/fitzwriter)
 
-You can configure a .toml like so to generate an .html file
+## Requirements
+
+- Requires python 3.8 or greater, with two packages not in the standard library.
+
+    ```
+    pip install markdown toml
+    ```
+
+This requires X11 as the window manager, because it uses **xdotool** to update the Firefox tab.
+
+- **Arch install**
+
+    ```
+    sudo pacman -S xdotool
+    ```
+
+- **Ubuntu install**
+
+    ```
+    sudo apt install xdotool
+    ```
+
+# How to use it
+
+This program is meant to read a simple config, and stylesheet, to create a nice looking page based on what's in based in the given markdown file.
+
+## Configure a TOML file like below
 
 ```toml
 [website]
 url = 'fitzover.com'
-blog = 'articles'
+blog = 'random'
+favicon = 'fitzover.com/ghost.svg'
 
 [article]
-title = 'Static Site Generator'
+title = 'README'
 
 [resources.markdown]
-path = 'markdown.md'
+path = 'README.md'
 
 [resources.style]
 path = 'style.css'
+
 ```
 
-To start a new article with a single .toml file in your directory.
+### Running after setup
 
-This needs to be more robust, will probably mess up if there are multiple .toml files.
+- Run this to initialize.
 
-```shell
-python tomltest.py init
-```
+    ```
+    python tomltest.py init
+    ```
 
-After initialized.
+- If it was initialized earlier.
 
-```shell
-python tomltest.py -f blog.toml
-```
+    ```
+    python tomltest.py -f blog.toml
+    ```
+
+# Features
 
 
 
-# Instant feedback with a live server.
 
-To instantly see how it looks in the browser.
+## See changes in the browser on save
 
-- Launch a live server however you want.
-  - You can launch a basic HTTP server with python: ```python -m http.server 8000```
- 
-  - The functionality is also built into most editors. 
+Right now it is setup to handle reloading on save, in Firefox.
 
-- Then run this command to have it update on save.
+- You can launch a basic HTTP server with python.
 
-```shell
-ls *.md | entr python tomltest.py -f blog.toml
-```
+    ```
+    python -m http.server 8000
+    ```
 
+    - Then open ***localhost:8000*** in Firefox.
+
+- Or just open index.html in Firefox.
+
+## Automatically create a table of contents
+
+Just add ***\[TOC\]*** to the first line of the .md file to create a table of contents.

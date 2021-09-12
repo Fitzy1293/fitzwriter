@@ -1,9 +1,10 @@
 [website]
 url = 'fitzover.com'
 blog = 'random'
+favicon = 'fitzover.com/ghost.svg'
 
 [article]
-title = 'A fitzwriter test'
+title = 'README'
 
 [resources.markdown]
 path = 'README.md'
