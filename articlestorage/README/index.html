@@ -39,11 +39,114 @@
        <div class="post p2 p-responsive wrap" role="main">
         <div class="measure">
          <div class="post">
-          <pre><code>```
-sudo pacman -S xdotool
-```
-</code></pre>
+          <div class="toc">
+           <ul>
+            <li>
+             <a href="#fitzwriter">
+              fitzwriter
+             </a>
+             <ul>
+              <li>
+               <a href="#links">
+                links
+               </a>
+              </li>
+              <li>
+               <a href="#requirements">
+                Requirements
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a href="#how-to-use-it">
+              How to use it
+             </a>
+             <ul>
+              <li>
+               <a href="#configure-a-toml-file-like-below">
+                Configure a TOML file like below
+               </a>
+               <ul>
+                <li>
+                 <a href="#running-after-setup">
+                  Running after setup
+                 </a>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </li>
+            <li>
+             <a href="#features">
+              Features
+             </a>
+             <ul>
+              <li>
+               <a href="#see-changes-in-the-browser-on-save">
+                See changes in the browser on save
+               </a>
+              </li>
+              <li>
+               <a href="#automatically-create-a-table-of-contents">
+                Automatically create a table of contents
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </div>
+          <h1 id="fitzwriter">
+           fitzwriter
+          </h1>
+          <p>
+           A static site generator. Turn a markdown file into a nice web page.
+          </p>
+          <h2 id="links">
+           links
+          </h2>
           <ul>
+           <li>
+            <a href="https://github.com/Fitzy1293/fitzwriter">
+             repo
+            </a>
+           </li>
+          </ul>
+          <h2 id="requirements">
+           Requirements
+          </h2>
+          <ul>
+           <li>
+            <p>
+             Requires python 3.8 or greater, with two packages not in the standard library.
+            </p>
+            <p>
+             <code>
+              pip install markdown toml
+             </code>
+            </p>
+           </li>
+          </ul>
+          <p>
+           This requires X11 as the window manager, because it uses
+           <strong>
+            xdotool
+           </strong>
+           to update the Firefox tab.
+          </p>
+          <ul>
+           <li>
+            <p>
+             <strong>
+              Arch install
+             </strong>
+            </p>
+            <p>
+             <code>
+              sudo pacman -S xdotool
+             </code>
+            </p>
+           </li>
            <li>
             <p>
              <strong>

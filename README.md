@@ -1,3 +1,25 @@
+[TOC]
+
+#fitzwriter
+
+A static site generator. Turn a markdown file into a nice web page.
+
+## links
+
+- [repo](https://github.com/Fitzy1293/fitzwriter)
+
+## Requirements
+
+- Requires python 3.8 or greater, with two packages not in the standard library.
+
+    ```
+    pip install markdown toml
+    ```
+
+This requires X11 as the window manager, because it uses **xdotool** to update the Firefox tab.
+
+- **Arch install**
+
     ```
     sudo pacman -S xdotool
     ```
