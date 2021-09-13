@@ -1,4 +1,3 @@
-
 ## Links
 - [Github repo](https://github.com/fitzy1293/fitzwriter)
 
