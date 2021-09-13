@@ -1,10 +1,8 @@
-[TOC]
-
-#fitzwriter
+# fitzwriter
 
 A static site generator. Turn a markdown file into a nice web page.
 
-## links
+## Links
 
 - [repo](https://github.com/Fitzy1293/fitzwriter)
 
