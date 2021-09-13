@@ -1,4 +1,3 @@
-## Requirements
 
 - Requires python 3.8 or greater, with two packages not in the standard library.
 
