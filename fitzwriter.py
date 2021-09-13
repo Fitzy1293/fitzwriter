@@ -1,5 +1,8 @@
+#!/bin/env python3
+
 '''
 repo:   https://github.com/Fitzy1293/fitzwriter
+
 
 This is a program for making html pages given a markdown file.
 Perhaps it's a little silly to do this in python with no framework, but it's a good exercise.
