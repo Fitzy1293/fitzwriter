@@ -13,12 +13,14 @@ tail README.md -n "$(expr $(wc -l README.md | cut -d ' ' -f 1) - 1)" > temp.md
 mv temp.md README.md
 
 git add .
-git commit -m "$(date -u)"
-
-if [ $# -eq 1 ]; then
+if [ $# -eq 0 ]; then
     exit 0
 fi
 
-if [ $1 == "push" ]; then
+echo $1
+
+if [ "$1" == "push" ]; then
+    git commit -m "$(date -u)"
+    git push -u origin master
     echo "worked"
 fi
