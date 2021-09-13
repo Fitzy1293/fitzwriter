@@ -15,7 +15,10 @@ mv temp.md README.md
 git add .
 git commit -m "$(date -u)"
 
-echo "$#"
+if [ $# -eq 1 ]; then
+    exit 0
+fi
+
 if [ $1 == "push" ]; then
     echo "worked"
 fi
