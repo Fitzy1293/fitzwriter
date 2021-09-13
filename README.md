@@ -1,4 +1,3 @@
-My static site generator, edit a markdown file and view the results in a browser.
 
 ## Links
 - [Github repo](https://github.com/fitzy1293/fitzwriter)
