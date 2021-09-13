@@ -1,5 +1,3 @@
-# Fitzwriter - a custom static site generator
-
 My static site generator, edit a markdown file and view the results in a browser.
 
 ## Links
@@ -27,6 +25,8 @@ This requires X11 as the window manager, because it uses **xdotool** to update t
     sudo apt install xdotool
     ```
 
+xdotool is what I used to implement automatically updating Firefox
+
 # How to use it
 
 This program is meant to read a simple config, and stylesheet, to create a nice looking page based on what's in based in the given markdown file.
@@ -35,9 +35,9 @@ This program is meant to read a simple config, and stylesheet, to create a nice 
 
 ```toml
 [website]
-url = 'fitzover.com'
-blog = 'random'
-favicon = 'fitzover.com/ghost.svg'
+url = 'example.com'
+blog = 'articlestorage'
+favicon = 'ghost.svg'
 
 [article]
 title = 'README'
@@ -55,19 +55,23 @@ path = 'style.css'
 - Run this to initialize.
 
     ```
-    python tomltest.py init
+    python fitzwriter.py init
     ```
 
 - If it was initialized earlier.
 
     ```
-    python tomltest.py -f blog.toml
+    python fitzwriter.py -f blog.toml
     ```
 
+- To launch an HTTP server and view the updates on save.
+
+    ```
+    python fitzwriter.py -l -f blog.toml
+    ```
+
+
 # Features
-
-
-
 
 ## See changes in the browser on save
 
@@ -86,3 +90,14 @@ Right now it is set up to handle reloading on save, in Firefox.
 ## Automatically create a table of contents
 
 Just add ***\[TOC\]*** to the first line of the .md file to create a table of contents.
+
+
+<!-- EXAMPLE OF EMBEDDING HTML
+# Sample Tweet
+
+<blockquote class="twitter-tweet">
+    <p lang="en" dir="ltr">All smiles from our crew as we near launch of <a href="https://twitter.com/hashtag/Inspiration4?src=hash&amp;ref_src=twsrc%5Etfw">#Inspiration4</a>. <a href="https://t.co/UrBdOlxLPJ">pic.twitter.com/UrBdOlxLPJ</a></p>
+    &mdash; Inspiration4 (@inspiration4x) <a href="https://twitter.com/inspiration4x/status/1437067512567451654?ref_src=twsrc%5Etfw">September 12, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+-->
